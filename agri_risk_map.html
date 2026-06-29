@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8f501354e1a26d14565c496c402ec52e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px;
+                border:2px solid grey; z-index:9999;
+                background-color:white; padding: 10px; border-radius: 5px;">
+        <p><b>Risk Legend</b></p>
+        <p><span style="color:green;">●</span> Low Risk (>0.6)</p>
+        <p><span style="color:orange;">●</span> Medium Risk (0.4-0.6)</p>
+        <p><span style="color:red;">●</span> High Risk (<0.4)</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_8f501354e1a26d14565c496c402ec52e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8f501354e1a26d14565c496c402ec52e = L.map(
+                "map_8f501354e1a26d14565c496c402ec52e",
+                {
+                    center: [22.0, 78.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f4ec94db3880bdb3c7ca09439ae998fe = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f4ec94db3880bdb3c7ca09439ae998fe.addTo(map_8f501354e1a26d14565c496c402ec52e);
+        
+    
+            var feature_group_8d8708528e3536d13c0d9dc574a95a4c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_1250aa741ee6eb0ade047e1684fe81a4 = L.circleMarker(
+                [15.9129, 79.74],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.295024814545904, "stroke": true, "weight": 2}
+            ).addTo(feature_group_8d8708528e3536d13c0d9dc574a95a4c);
+        
+    
+        var popup_3151c62859e31bd639c37e0b9c9c1853 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f178349d726c4b8be14f753e42561e0b = $(`<div id="html_f178349d726c4b8be14f753e42561e0b" style="width: 100.0%; height: 100.0%;"><b>AP</b><br>Score: 0.115<br>Top Crop: Soybean<br>Water Stressed: True<br>Revenue: ₹10794.45 Cr</div>`)[0];
+                popup_3151c62859e31bd639c37e0b9c9c1853.setContent(html_f178349d726c4b8be14f753e42561e0b);
+            
+        
+
+        circle_marker_1250aa741ee6eb0ade047e1684fe81a4.bindPopup(popup_3151c62859e31bd639c37e0b9c9c1853)
+        ;
+
+        
+    
+    
+            var circle_marker_7404521b11d0f1f81275d36d845a8188 = L.circleMarker(
+                [25.0961, 85.3131],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.948285942441238, "stroke": true, "weight": 2}
+            ).addTo(feature_group_8d8708528e3536d13c0d9dc574a95a4c);
+        
+    
+        var popup_a7394a7b706b85a7cc02d726ed15c025 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6113ae4a7b83b4103b0f8a92d049c36f = $(`<div id="html_6113ae4a7b83b4103b0f8a92d049c36f" style="width: 100.0%; height: 100.0%;"><b>Bihar</b><br>Score: 0.597<br>Top Crop: Maize<br>Water Stressed: True<br>Revenue: ₹20184.08 Cr</div>`)[0];
+                popup_a7394a7b706b85a7cc02d726ed15c025.setContent(html_6113ae4a7b83b4103b0f8a92d049c36f);
+            
+        
+
+        circle_marker_7404521b11d0f1f81275d36d845a8188.bindPopup(popup_a7394a7b706b85a7cc02d726ed15c025)
+        ;
+
+        
+    
+    
+            var circle_marker_84b3f40c6a907a96790d40915a6c9d6f = L.circleMarker(
+                [22.2587, 71.1924],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.338272911825733, "stroke": true, "weight": 2}
+            ).addTo(feature_group_8d8708528e3536d13c0d9dc574a95a4c);
+        
+    
+        var popup_9e1402f3bdb450f7d866efa36147a68b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_04481eefb80380e5ede820c1ba05db2b = $(`<div id="html_04481eefb80380e5ede820c1ba05db2b" style="width: 100.0%; height: 100.0%;"><b>Gujarat</b><br>Score: 0.467<br>Top Crop: Cotton<br>Water Stressed: True<br>Revenue: ₹18732.54 Cr</div>`)[0];
+                popup_9e1402f3bdb450f7d866efa36147a68b.setContent(html_04481eefb80380e5ede820c1ba05db2b);
+            
+        
+
+        circle_marker_84b3f40c6a907a96790d40915a6c9d6f.bindPopup(popup_9e1402f3bdb450f7d866efa36147a68b)
+        ;
+
+        
+    
+    
+            var circle_marker_747f5187c511b4ca3a79794524f907d6 = L.circleMarker(
+                [10.8505, 76.2711],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.823435085354337, "stroke": true, "weight": 2}
+            ).addTo(feature_group_8d8708528e3536d13c0d9dc574a95a4c);
+        
+    
+        var popup_a93d19edffd29c85a304fbc25b6f0e84 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52e8283937da529bbfe0e4e41caf5146 = $(`<div id="html_52e8283937da529bbfe0e4e41caf5146" style="width: 100.0%; height: 100.0%;"><b>Kerala</b><br>Score: 0.591<br>Top Crop: Sugarcane<br>Water Stressed: True<br>Revenue: ₹28614.51 Cr</div>`)[0];
+                popup_a93d19edffd29c85a304fbc25b6f0e84.setContent(html_52e8283937da529bbfe0e4e41caf5146);
+            
+        
+
+        circle_marker_747f5187c511b4ca3a79794524f907d6.bindPopup(popup_a93d19edffd29c85a304fbc25b6f0e84)
+        ;
+
+        
+    
+    
+            var circle_marker_e943d18d7d105dd3c5373007972f7d01 = L.circleMarker(
+                [23.4734, 77.947],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.932384418711324, "stroke": true, "weight": 2}
+            ).addTo(feature_group_8d8708528e3536d13c0d9dc574a95a4c);
+        
+    
+        var popup_0756c879c7aa749dc9f59d492888f538 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1566d82923c1e94aa8b47921f66e0b9b = $(`<div id="html_1566d82923c1e94aa8b47921f66e0b9b" style="width: 100.0%; height: 100.0%;"><b>MP</b><br>Score: 0.297<br>Top Crop: Cotton<br>Water Stressed: True<br>Revenue: ₹20625.55 Cr</div>`)[0];
+                popup_0756c879c7aa749dc9f59d492888f538.setContent(html_1566d82923c1e94aa8b47921f66e0b9b);
+            
+        
+
+        circle_marker_e943d18d7d105dd3c5373007972f7d01.bindPopup(popup_0756c879c7aa749dc9f59d492888f538)
+        ;
+
+        
+    
+    
+            var circle_marker_98312ec0ba328111c8de877b716c549c = L.circleMarker(
+                [19.6633, 75.3003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.8134903209124085, "stroke": true, "weight": 2}
+            ).addTo(feature_group_8d8708528e3536d13c0d9dc574a95a4c);
+        
+    
+        var popup_a9bb3e846978c090578e33b725a05e0b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5e2ada44a597e13051ea9c6d767bd2f = $(`<div id="html_a5e2ada44a597e13051ea9c6d767bd2f" style="width: 100.0%; height: 100.0%;"><b>Maharashtra</b><br>Score: 0.191<br>Top Crop: Soybean<br>Water Stressed: True<br>Revenue: ₹8538.46 Cr</div>`)[0];
+                popup_a9bb3e846978c090578e33b725a05e0b.setContent(html_a5e2ada44a597e13051ea9c6d767bd2f);
+            
+        
+
+        circle_marker_98312ec0ba328111c8de877b716c549c.bindPopup(popup_a9bb3e846978c090578e33b725a05e0b)
+        ;
+
+        
+    
+    
+            var circle_marker_07bba7a28a0df745baef7924256f9b7c = L.circleMarker(
+                [26.8467, 80.9462],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.693074816699937, "stroke": true, "weight": 2}
+            ).addTo(feature_group_8d8708528e3536d13c0d9dc574a95a4c);
+        
+    
+        var popup_7076029aacfe9e831e5ce75ecca3ad66 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b2241635d52b6e8bff8cce20eef70887 = $(`<div id="html_b2241635d52b6e8bff8cce20eef70887" style="width: 100.0%; height: 100.0%;"><b>UP</b><br>Score: 0.235<br>Top Crop: Rice<br>Water Stressed: True<br>Revenue: ₹10454.44 Cr</div>`)[0];
+                popup_7076029aacfe9e831e5ce75ecca3ad66.setContent(html_b2241635d52b6e8bff8cce20eef70887);
+            
+        
+
+        circle_marker_07bba7a28a0df745baef7924256f9b7c.bindPopup(popup_7076029aacfe9e831e5ce75ecca3ad66)
+        ;
+
+        
+    
+    
+            feature_group_8d8708528e3536d13c0d9dc574a95a4c.addTo(map_8f501354e1a26d14565c496c402ec52e);
+        
+    
+            var feature_group_f8977eee21569c9d9fd9d2ded53f4148 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_cb4bfa62a2debc045cb2c51afe423f21 = L.circleMarker(
+                [26.2006, 92.9376],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.336904028751491, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_c657e56284292a9774c9ba7e63b42e17 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e6288df610bf0e8546ea517a1bb0a16 = $(`<div id="html_2e6288df610bf0e8546ea517a1bb0a16" style="width: 100.0%; height: 100.0%;"><b>Assam</b><br>Score: 0.167<br>Top Crop: Sugarcane<br>Water Stressed: False<br>Revenue: ₹17900.71 Cr</div>`)[0];
+                popup_c657e56284292a9774c9ba7e63b42e17.setContent(html_2e6288df610bf0e8546ea517a1bb0a16);
+            
+        
+
+        circle_marker_cb4bfa62a2debc045cb2c51afe423f21.bindPopup(popup_c657e56284292a9774c9ba7e63b42e17)
+        ;
+
+        
+    
+    
+            var circle_marker_befab70a4f098a68139af18bc9797ab7 = L.circleMarker(
+                [29.0588, 76.0856],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.485396913033243, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_75b2ef16f9fea2d279b04a2ba84db2af = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_02d6e8333785be270ff66d3272aa2999 = $(`<div id="html_02d6e8333785be270ff66d3272aa2999" style="width: 100.0%; height: 100.0%;"><b>Haryana</b><br>Score: 0.424<br>Top Crop: Maize<br>Water Stressed: False<br>Revenue: ₹13479.43 Cr</div>`)[0];
+                popup_75b2ef16f9fea2d279b04a2ba84db2af.setContent(html_02d6e8333785be270ff66d3272aa2999);
+            
+        
+
+        circle_marker_befab70a4f098a68139af18bc9797ab7.bindPopup(popup_75b2ef16f9fea2d279b04a2ba84db2af)
+        ;
+
+        
+    
+    
+            var circle_marker_705d5d042373f2a3ad16322562e2a8e1 = L.circleMarker(
+                [15.3173, 75.7139],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.374843160148275, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_3da8b1003741197b146c67ee12c7e0dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20e8a9dcf03a77cfb7f98b6314c91b28 = $(`<div id="html_20e8a9dcf03a77cfb7f98b6314c91b28" style="width: 100.0%; height: 100.0%;"><b>Karnataka</b><br>Score: 0.219<br>Top Crop: Cotton<br>Water Stressed: False<br>Revenue: ₹14644.86 Cr</div>`)[0];
+                popup_3da8b1003741197b146c67ee12c7e0dc.setContent(html_20e8a9dcf03a77cfb7f98b6314c91b28);
+            
+        
+
+        circle_marker_705d5d042373f2a3ad16322562e2a8e1.bindPopup(popup_3da8b1003741197b146c67ee12c7e0dc)
+        ;
+
+        
+    
+    
+            var circle_marker_152c068802a629211e11b48735bbdb5a = L.circleMarker(
+                [20.9517, 85.0985],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.222632384036522, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_107bd26868f0a7b4bd5ad830553b1f71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b4713dbd931cbd71a12be935dd4bcdc6 = $(`<div id="html_b4713dbd931cbd71a12be935dd4bcdc6" style="width: 100.0%; height: 100.0%;"><b>Odisha</b><br>Score: 0.261<br>Top Crop: Wheat<br>Water Stressed: False<br>Revenue: ₹14037.76 Cr</div>`)[0];
+                popup_107bd26868f0a7b4bd5ad830553b1f71.setContent(html_b4713dbd931cbd71a12be935dd4bcdc6);
+            
+        
+
+        circle_marker_152c068802a629211e11b48735bbdb5a.bindPopup(popup_107bd26868f0a7b4bd5ad830553b1f71)
+        ;
+
+        
+    
+    
+            var circle_marker_13b44a728caceebdce772f0221ef50fc = L.circleMarker(
+                [31.1471, 75.3412],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.206934826142598, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_b395faf5f7f67a081fcf37df03e9a139 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_05462bc8e3562f9ad93b414a4c59f8b3 = $(`<div id="html_05462bc8e3562f9ad93b414a4c59f8b3" style="width: 100.0%; height: 100.0%;"><b>Punjab</b><br>Score: 0.560<br>Top Crop: Maize<br>Water Stressed: False<br>Revenue: ₹16186.92 Cr</div>`)[0];
+                popup_b395faf5f7f67a081fcf37df03e9a139.setContent(html_05462bc8e3562f9ad93b414a4c59f8b3);
+            
+        
+
+        circle_marker_13b44a728caceebdce772f0221ef50fc.bindPopup(popup_b395faf5f7f67a081fcf37df03e9a139)
+        ;
+
+        
+    
+    
+            var circle_marker_31592d6683fcc98128c3b4a0a0296737 = L.circleMarker(
+                [27.0238, 73.3119],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.290846551667155, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_429798ea86fa6b44d2559fce53f9e0dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_23206a47b805cc956d21ac07a2dcbf54 = $(`<div id="html_23206a47b805cc956d21ac07a2dcbf54" style="width: 100.0%; height: 100.0%;"><b>Rajasthan</b><br>Score: 0.215<br>Top Crop: Sugarcane<br>Water Stressed: False<br>Revenue: ₹10127.86 Cr</div>`)[0];
+                popup_429798ea86fa6b44d2559fce53f9e0dc.setContent(html_23206a47b805cc956d21ac07a2dcbf54);
+            
+        
+
+        circle_marker_31592d6683fcc98128c3b4a0a0296737.bindPopup(popup_429798ea86fa6b44d2559fce53f9e0dc)
+        ;
+
+        
+    
+    
+            var circle_marker_d985cd6162e5e85059b9012fef22bfc9 = L.circleMarker(
+                [11.1271, 78.6569],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.67160143462441, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_c896256a7c3ac5bd373e01266ac7943a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6eb3695b6a21f2f4832374accba50062 = $(`<div id="html_6eb3695b6a21f2f4832374accba50062" style="width: 100.0%; height: 100.0%;"><b>Tamil Nadu</b><br>Score: 0.784<br>Top Crop: Sugarcane<br>Water Stressed: False<br>Revenue: ₹30515.46 Cr</div>`)[0];
+                popup_c896256a7c3ac5bd373e01266ac7943a.setContent(html_6eb3695b6a21f2f4832374accba50062);
+            
+        
+
+        circle_marker_d985cd6162e5e85059b9012fef22bfc9.bindPopup(popup_c896256a7c3ac5bd373e01266ac7943a)
+        ;
+
+        
+    
+    
+            var circle_marker_d19a9de13ba46d48d3f9b9d9527bf755 = L.circleMarker(
+                [22.9868, 87.855],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.802640241263932, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f8977eee21569c9d9fd9d2ded53f4148);
+        
+    
+        var popup_c3ac66af5b6762d1088c8b7f9e91bc23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_782e7241d8c1c4aaa673f9ad40f58945 = $(`<div id="html_782e7241d8c1c4aaa673f9ad40f58945" style="width: 100.0%; height: 100.0%;"><b>WB</b><br>Score: 0.240<br>Top Crop: Maize<br>Water Stressed: False<br>Revenue: ₹12560.02 Cr</div>`)[0];
+                popup_c3ac66af5b6762d1088c8b7f9e91bc23.setContent(html_782e7241d8c1c4aaa673f9ad40f58945);
+            
+        
+
+        circle_marker_d19a9de13ba46d48d3f9b9d9527bf755.bindPopup(popup_c3ac66af5b6762d1088c8b7f9e91bc23)
+        ;
+
+        
+    
+    
+            feature_group_f8977eee21569c9d9fd9d2ded53f4148.addTo(map_8f501354e1a26d14565c496c402ec52e);
+        
+    
+            var layer_control_de974118a5b456ca96e9b95c957b8bd7_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f4ec94db3880bdb3c7ca09439ae998fe,
+                },
+                overlays :  {
+                    "Water Stressed" : feature_group_8d8708528e3536d13c0d9dc574a95a4c,
+                    "Not Stressed" : feature_group_f8977eee21569c9d9fd9d2ded53f4148,
+                },
+            };
+            let layer_control_de974118a5b456ca96e9b95c957b8bd7 = L.control.layers(
+                layer_control_de974118a5b456ca96e9b95c957b8bd7_layers.base_layers,
+                layer_control_de974118a5b456ca96e9b95c957b8bd7_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_8f501354e1a26d14565c496c402ec52e);
+
+        
+</script>
+</html>
